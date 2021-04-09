@@ -48,6 +48,8 @@ Sentry.init({
   beforeSend(event) { return event }
 });
 
+initializeSentry()
+
 // React-router in use here https://reactrouter.com/web/guides/quick-start
 ReactDOM.render(
   <React.StrictMode>
