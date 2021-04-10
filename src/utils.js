@@ -31,7 +31,7 @@ function rotator(value) {
             break;
         case 2:
             console.log("2",n)
-            err = new RangeError('this range error')
+            err = new RangeError('this again range error')
             break;
     }
     return err
