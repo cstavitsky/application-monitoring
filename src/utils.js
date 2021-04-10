@@ -24,12 +24,15 @@ function rotator(value) {
         case 0:
             console.log("0",n)
             err = new ReferenceError('this ref error')
+            break;
         case 1:
             console.log("1",n)
             err = new SyntaxError('this syntax error')
+            break;
         case 2:
             console.log("2",n)
             err = new RangeError('this range error')
+            break;
     }
     return err
 }
