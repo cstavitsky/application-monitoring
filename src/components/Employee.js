@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import errors from "../utils";
 
 class Employee extends Component {
     constructor(props) {
@@ -7,6 +8,7 @@ class Employee extends Component {
     }
 
     async componentDidMount() {
+        errors('Employee')
         console.log(this.props.match.params.name)
     }
 

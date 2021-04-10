@@ -9,7 +9,7 @@ class Product extends Component {
     }
 
     async componentDidMount() {
-        errors()
+        errors('Product')
         console.log(this.props.match.params.id)
     }
 
