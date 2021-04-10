@@ -19,14 +19,6 @@ import {
   Link,
 } from "react-router-dom";
 
-// from Creat New React App
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <AppOld />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
-
 const tracingOrigins = [
   'localhost', 
   "empowerplant.io",
@@ -36,6 +28,11 @@ const tracingOrigins = [
 const history = createBrowserHistory();
 const SentryRoute = Sentry.withSentryRouting(Route);
 
+let config = {
+  RELEASE: new Date().getMonth()+1 + "." + new Date().getDate(),
+  environment: "test"
+}
+console.log(config)
 Sentry.init({ 
   dsn: "https://19349cefec81421f89ba3c572f5a1f59@o262702.ingest.sentry.io/5711949",
   integrations: [new Integrations.BrowserTracing({
@@ -43,12 +40,12 @@ Sentry.init({
     routingInstrumentation: Sentry.reactRouterV5Instrumentation(history),
   })],
   tracesSampleRate: 1.0,
-  release: new Date().getMonth() + "." + new Date().getDate(),
+  release: new Date().getMonth()+1 + "." + new Date().getDate(),
   environment: "test",
   beforeSend(event) { return event }
 });
 
-initializeSentry()
+// initializeSentry()
 
 // React-router in use here https://reactrouter.com/web/guides/quick-start
 ReactDOM.render(
