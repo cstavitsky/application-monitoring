@@ -10,7 +10,7 @@ class Product extends Component {
 
     async componentDidMount() {
         errors('Product')
-        console.log(this.props.match.params.id)
+        console.log("Product Id " + this.props.match.params.id)
     }
 
     render() {

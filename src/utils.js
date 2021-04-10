@@ -22,10 +22,13 @@ function rotator(value) {
     console.log("N",n)
     switch (n) {
         case 0:
+            console.log("0",n)
             err = new ReferenceError('this ref error')
         case 1:
+            console.log("1",n)
             err = new SyntaxError('this syntax error')
         case 2:
+            console.log("2",n)
             err = new RangeError('this range error')
     }
     return err

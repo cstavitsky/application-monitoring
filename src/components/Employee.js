@@ -9,7 +9,7 @@ class Employee extends Component {
 
     async componentDidMount() {
         errors('Employee')
-        console.log(this.props.match.params.name)
+        console.log("Employee ID " + this.props.match.params.name)
     }
 
     render() {
