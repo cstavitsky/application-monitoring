@@ -19,6 +19,7 @@ export default errors
 function rotator(value) {
     let n = Math.floor(Math.random() * 3);
     let err
+    console.log("N",n)
     switch (n) {
         case 0:
             err = new ReferenceError('this ref error')
