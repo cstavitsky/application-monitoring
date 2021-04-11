@@ -47,6 +47,10 @@ Sentry.init({
 
 // initializeSentry()
 
+// TODO strict mode?
+// TODO app rewire or npm run eject?
+// TODO Disabling code-splitting, chunking?
+// TODO react-scripts > config > webpack.config.js
 // React-router in use here https://reactrouter.com/web/guides/quick-start
 ReactDOM.render(
   <React.StrictMode>
