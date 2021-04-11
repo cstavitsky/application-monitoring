@@ -15,7 +15,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 redux, react-redux, redux-logger, will do later.
 
-
 ## Setup
 ```
 npm install
@@ -33,3 +32,9 @@ npm build
 serve -s build
 ```
 
+## Questions
+- Why are events not grouping into issues?
+- Why the warning about 'invalid location in source map?'
+    - maybe this is affecting grouping?
+    - maybe this is due to react-scripts's webpack's chunking, and should be turned off?
+- TYPESCRIPT

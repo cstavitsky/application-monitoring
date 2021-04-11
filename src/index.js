@@ -33,6 +33,8 @@ let config = {
   environment: "test"
 }
 console.log(config)
+
+// TODO move to /utils/sentry.js ir src/sentry.js
 Sentry.init({ 
   dsn: "https://19349cefec81421f89ba3c572f5a1f59@o262702.ingest.sentry.io/5711949",
   integrations: [new Integrations.BrowserTracing({
@@ -42,9 +44,11 @@ Sentry.init({
   tracesSampleRate: 1.0,
   release: new Date().getMonth()+1 + "." + new Date().getDate(),
   environment: "test",
-  beforeSend(event) { return event }
+  beforeSend(event,hint) {
+    console.log("beforeSend", event) 
+    return event 
+  }
 });
-
 // initializeSentry()
 
 // TODO strict mode?

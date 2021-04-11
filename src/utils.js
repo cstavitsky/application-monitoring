@@ -1,38 +1,30 @@
 import * as Sentry from "@sentry/react";
 
 function errors(value) {
-    // let msg = "this is an error from componentDidMount"
-    // console.log(msg)
     try {
-        // throw new Error(msg)
-        let err = rotator(value)
-        throw err
+        let err, errMsg
+        [err, errMsg] = errorPicker(value)
+        throw new err(errMsg)
     } catch (e) {
+        console.log("e", e)
         // TODO fingerprint
+        // TODO 'print the current fingerprint'?
+        // Sentry.withScope(scope => {
+            // scope.setFingerprint("{{ default }}") // tag, or value variable, if not grouping well
+            // Sentry.captureException(e)
+        // })
         Sentry.captureException(e)
     }
 }
 
-export default errors
-
-
-function rotator(value) {
-    let n = Math.floor(Math.random() * 3);
-    let err
-    console.log("N",n)
-    switch (n) {
-        case 0:
-            console.log("0",n)
-            err = new ReferenceError('this ref error')
-            break;
-        case 1:
-            console.log("1",n)
-            err = new SyntaxError('this syntax error')
-            break;
-        case 2:
-            console.log("2",n)
-            err = new RangeError('this again range error')
-            break;
-    }
-    return err
+function errorPicker(value) {
+    let n = Math.floor(Math.random() * 5);
+    if (n === 0) return [ReferenceError, " non-existent variable reference " + value]
+    if (n === 1) return [SyntaxError, value + " is syntactically invalid"]
+    if (n === 2) return [RangeError, "value out of range in " + value]
+    if (n === 3) return [TypeError, value + " variable or parameter is not of valid type"]
+    if (n === 4) return [URIError, value + " URI handling function used incorrectly"]
+    return [Error, "error"]
 }
+
+export default errors
