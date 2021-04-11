@@ -37,4 +37,10 @@ serve -s build
 - Why the warning about 'invalid location in source map?'
     - maybe this is affecting grouping?
     - maybe this is due to react-scripts's webpack's chunking, and should be turned off?
+    https://github.com/facebook/create-react-app/issues/5306#issuecomment-433425838
+    https://stackoverflow.com/questions/55993890/how-can-i-disable-chunkcode-splitting-with-webpack4
 - TYPESCRIPT
+
+
+webpack2 didn't have code-splitting (chunking)
+webpack4 has it.
