@@ -1,7 +1,9 @@
 import logo from '../assets/logo.svg';
 import './Cra.css';
+import errors from '../utils'
 
 function Cra() {
+  errors('Cra')
   return (
     <div className="App">
       <header className="App-header">
