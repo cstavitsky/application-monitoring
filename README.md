@@ -39,6 +39,7 @@ serve -s build
     - maybe this is due to react-scripts's webpack's chunking, and should be turned off?
     https://github.com/facebook/create-react-app/issues/5306#issuecomment-433425838
     https://stackoverflow.com/questions/55993890/how-can-i-disable-chunkcode-splitting-with-webpack4
+    - Validate sourcemaps are built correctly
 - TYPESCRIPT
 
 
